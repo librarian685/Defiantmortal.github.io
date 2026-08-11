@@ -1,40 +1,129 @@
+/* --- 全局设置 --- */
 body {
-  margin: 60px auto;
-  width: 70%;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    /* 设置背景颜色，让页面不单调 */
+    background-color: #f0f2f5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    /* 让内容居中，并设置最大宽度 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 顶部对齐 */
+    min-height: 100vh;
+    padding-top: 40px;
 }
 
-h1 {
-  font-size: 3em;
-  color: #2979ff;        /* 主色 */
-}
-
-a {
-  text-decoration: none;
-  color: #999;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #2979ff;
-}
-
-footer {
-  border-top: 1px solid #d5d5d5;
-  font-size: 0.8em;
-  margin-top: 40px;
-  padding-top: 20px;
-}
-
+/* --- 核心容器 --- */
 .container {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 40px;
-  max-width: 800px;
-  margin: 40px auto;
+    width: 100%;
+    max-width: 800px; /* 页面最宽不超过800像素 */
+    padding: 0 20px;  /* 两侧留点空隙 */
+    box-sizing: border-box;
 }
 
+/* --- 头部区域 --- */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* 圆形头像 */
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    margin-top: 10px;
+}
+
+/* --- 卡片区域 --- */
+.card {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px; /* 圆角 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* 轻微阴影 */
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* 鼠标放上去微微上浮 */
+}
+
+.card h2 {
+    margin-top: 0;
+    border-left: 5px solid #3498db; /* 左侧蓝色装饰条 */
+    padding-left: 15px;
+    color: #34495e;
+    font-size: 1.5em;
+}
+
+.card ul {
+    list-style: none; /* 去掉默认的列表圆点 */
+    padding: 0;
+}
+
+.card li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.card strong {
+    color: #2c3e50;
+}
+
+/* --- 链接样式 --- */
+.links {
+    display: flex;
+    gap: 20px; /* 链接之间的间距 */
+    margin-top: 20px;
+}
+
+.links a {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none; /* 去掉下划线 */
+    border-radius: 25px; /* 椭圆形按钮 */
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.links a:hover {
+    background-color: #2980b9; /* 鼠标悬停变深色 */
+}
+
+/* --- 页脚 --- */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #95a5a6;
+    font-size: 0.9em;
+    border-top: 1px solid #ecf0f1;
+}
+
+/* --- 响应式设计 (手机上看也会变好看) --- */
+@media (max-width: 600px) {
+    .links {
+        flex-direction: column; /* 手机上按钮竖着排 */
+    }
+    .links a {
+        text-align: center;
+    }
+}
